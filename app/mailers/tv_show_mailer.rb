@@ -1,4 +1,9 @@
 class TvShowMailer < ApplicationMailer
+  include Sidekiq::Worker
+
+  def perform
+    
+  end
   
   def show_starts_soon_email
     @show = params[:tv_show]
