@@ -50,5 +50,9 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'sidekiq', '~> 6.1', '>= 6.1.2'
+gem 'sidekiq-cron', '~> 1.2'
+gem 'sidekiq-scheduler', '~> 3.0', '>= 3.0.1'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
