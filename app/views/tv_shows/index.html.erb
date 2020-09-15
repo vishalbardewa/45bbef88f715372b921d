@@ -1,6 +1,7 @@
 <h1>Tv Shows list</h1>
 <form action="/search">
   <input name="q" />
+  <%= select_tag(:category, options_for_select([['TV Show', 1],['Channel', 2]] )) %>
   <span><button type="submit">Search</button></span>
 </form>
 <ul>
@@ -21,6 +22,18 @@
       <p> 
         Timings: 
         <%=tv_show.airtime %> 
+      <p>
+      <p> 
+        Favourite: 
+        <%=tv_show.favourite %> 
+        <span>
+          <form action='/update_favourites' method="POST">
+            <input name="authenticity_token" value="<% form_authenticity_token%>" type="hidden" />
+            <input name="id" value=<%= tv_show.id%> type="hidden" />
+            <%= check_box_tag :favourite %>
+            <span><button type="submit">Add to Favourites</button></span>
+          </form>
+        </span>
       <p>
     </li>
   <% end %>

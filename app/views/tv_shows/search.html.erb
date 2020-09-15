@@ -1,23 +1,47 @@
 <h1>Search Results</h1>
-<ul>
-  <% @tv_shows.each do |tv_show|%>
-    <li>
-      <h6> 
-        Show Title:
-        <%= link_to tv_show.title %> 
-      <h6>
-      <p> 
-        Plot: 
-        <%=tv_show.description %> 
-      <p>
-      <p> 
-        Channel: 
-        <%=tv_show.channel.name %> 
-      <p>
-      <p> 
-        Timings: 
-        <%=tv_show.airtime %> 
-      <p>
-    </li>
-  <% end %>
-</ul>
+<% if params[:category].to_i == 1 %>
+  <ul>
+    <% @result.each do |result|%>
+      <li>
+        <h6> 
+          Show Title:
+          <%= link_to result.title %> 
+        <h6>
+        <p> 
+          Plot: 
+          <%=result.description %> 
+        <p>
+        <p> 
+          Channel: 
+          <%=result.channel.name %> 
+        <p>
+        <p> 
+          Timings: 
+          <%=result.airtime %> 
+        <p>
+        <p> 
+          Favourite: 
+          <%=result.favourite %> 
+        <p>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if  params[:category].to_i == 2 %>
+  <ul>
+    <% @result.each do |result|%>
+      <li>
+        <h6> 
+          Channel Name
+          <%= link_to result.name %> 
+        <h6>
+        <p> 
+          Location: 
+          <%=result.location %> 
+        <p>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
