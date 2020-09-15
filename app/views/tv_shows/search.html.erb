@@ -1,0 +1,23 @@
+<h1>Search Results</h1>
+<ul>
+  <% @tv_shows.each do |tv_show|%>
+    <li>
+      <h6> 
+        Show Title:
+        <%= link_to tv_show.title %> 
+      <h6>
+      <p> 
+        Plot: 
+        <%=tv_show.description %> 
+      <p>
+      <p> 
+        Channel: 
+        <%=tv_show.channel.name %> 
+      <p>
+      <p> 
+        Timings: 
+        <%=tv_show.airtime %> 
+      <p>
+    </li>
+  <% end %>
+</ul>

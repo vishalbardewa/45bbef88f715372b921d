@@ -1,0 +1,27 @@
+<h1>Tv Shows list</h1>
+<form action="/search">
+  <input name="q" />
+  <span><button type="submit">Search</button></span>
+</form>
+<ul>
+  <% @tv_shows.each do |tv_show|%>
+    <li>
+      <h6> 
+        Show Title:
+        <%= link_to tv_show.title %> 
+      <h6>
+      <p> 
+        Plot: 
+        <%=tv_show.description %> 
+      <p>
+      <p> 
+        Channel: 
+        <%=tv_show.channel.name %> 
+      <p>
+      <p> 
+        Timings: 
+        <%=tv_show.airtime %> 
+      <p>
+    </li>
+  <% end %>
+</ul>
